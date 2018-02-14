@@ -41,6 +41,15 @@ optimization level zero will ensure that vectorization is disabled (uncomment CF
 
 4. Convert the for loop to a while loop. Does it still vectorize?
 
+5. Notice the f characters in this expression:
+
+```C
+b[i] = 2.0f * (float)i + 1.0f;
+```
+
+What happens if you remove these characters from the line above and re-compile? What additional comments do you see
+in the vectorization report?
+
 5. Move the actual vector addition step (c = a + b) into a second for loop. With level three optimization
 enabled, how does the autovectorization behavior compare (read reporting carefully)? How does the walltime compare?
 
